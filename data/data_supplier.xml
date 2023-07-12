@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+        <record model="related.supplier" id="supp_1">
+            <field name="name">Emma Johnson</field>
+            <field name="gender">female</field>
+        </record>
+        <record model="related.supplier" id="supp_2">
+            <field name="name">Mia Clark</field>
+            <field name="gender">female</field>
+        </record>
+        <record model="related.supplier" id="supp_3">
+            <field name="name">Noah Smith</field>
+            <field name="gender">male</field>
+        </record>
+        <record model="related.supplier" id="supp_4">
+            <field name="name">Olivia Davis</field>
+            <field name="gender">female</field>
+        </record>
+        <record model="related.supplier" id="supp_5">
+            <field name="name">Liam Brown</field>
+            <field name="gender">male</field>
+        </record>
+        <record model="related.supplier" id="supp_6">
+            <field name="name">Ava Wilson</field>
+            <field name="gender">female</field>
+        </record>
+        <record model="related.supplier" id="supp_7">
+            <field name="name">Sophia Taylor</field>
+            <field name="gender">female</field>
+        </record>
+        <record model="related.supplier" id="supp_8">
+            <field name="name">Jackson Anderson</field>
+            <field name="gender">male</field>
+        </record>
+        <record model="related.supplier" id="supp_9">
+            <field name="name">Isabella Martinez</field>
+            <field name="gender">female</field>
+        </record>
+        <record model="related.supplier" id="supp_10">
+            <field name="name">Aiden Thomas</field>
+            <field name="gender">male</field>
+        </record>
+    </data>
+
+</odoo>

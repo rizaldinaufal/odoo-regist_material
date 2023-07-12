@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="regist_material_tree_view" model="ir.ui.view">
+        <field name="name">regist.material.view</field>
+        <field name="model">regist.material</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code" string="Material Code" />
+                <field name="name" string="Material Name" />
+                <field name="type" string="Material Type" />
+                <field name="buy_price" string="Material Buy Price" />
+                <field name="related_supplier" string="Related Supplier" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="regist_material_search_view" model="ir.ui.view">
+        <field name="name">regist.material.search.view</field>
+        <field name="model">regist.material</field>
+        <field name="arch" type="xml">
+            <search string="material">
+                <separator/>
+                <filter string="Material Type: Fabric" name="Fabric" domain="[('type','=','fabric')]"/>
+                <filter string="Material Type: Jeans" name="Jeans" domain="[('type','=','jeans')]"/>
+                <filter string="Material Type: Cotton" name="Cotton" domain="[('type','=','cotton')]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="regist_material_form_view" model="ir.ui.view">
+        <field name="name">regist.material.form.view</field>
+        <field name="model">regist.material</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="code" string="Material Code" />
+                        <field name="name" string="Material Name" />
+                        <field name="type" string="Material Type" />
+                        <field name="buy_price" string="Material Buy Price" />
+                        <field name="related_supplier" string="Related Supplier" options='{"no_create": True}'/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="regist_material_actions_id" model="ir.actions.act_window">
+        <field name="name">Material</field>
+        <field name="res_model">regist.material</field>
+        <field name="search_view_id" ref="regist_material_search_view"/>
+    </record>
+
+    <record id="regist_material_actions_tree_view_id" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1" />
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="regist_material_tree_view" />
+        <field name="act_window_id" ref="regist_material_actions_id" />
+    </record>
+    <record id="regist_material_actions_form_view_id" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2" />
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="regist_material_form_view" />
+        <field name="act_window_id" ref="regist_material_actions_id" />
+    </record>
+
+    <menuitem
+        id="parent_regist_material_id"
+        name="Material"
+        sequence="5"/>
+        <menuitem 
+            id="child_regist_material_id"
+            name="Material"
+            sequence="1"
+            parent="regist_material.parent_regist_material_id"
+            action="regist_material.regist_material_actions_id"/>
+</odoo>
